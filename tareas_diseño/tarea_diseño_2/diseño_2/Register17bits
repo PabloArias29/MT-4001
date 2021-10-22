@@ -1,0 +1,13 @@
+module Reegister17bits (CLK, D, RST, En, Q);
+
+  input CLK, RST, En;
+  input [16:0] D;
+  output reg [16:0] Q;
+  
+  always @(posedge)
+    if (RST) begin
+      Q <= 1'b0;
+    and else if(En) begin
+      Q <= D;
+
+endmodule
