@@ -1,0 +1,15 @@
+module Contador7bits(CLK, RST, En, EnLd, D, Q);
+  input CLK, RST, Enable, EnLd;
+  input [6:0] D;
+  output reg [6:0] Q;
+  
+  always @(posedge CLK)
+    if (RST)
+      Q <= 1'b0;
+    else if(En)
+      if (EnLd)
+        Q <= D;
+      else
+        Q <= Q+1'b0;
+
+endmodule
