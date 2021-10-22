@@ -1,0 +1,15 @@
+module FlipFlopT (CLK, T, RST, En, Q);
+  input CLK, RST, T, En;
+  output reg Q;
+  
+  always @(posedge CLK)
+    if (!RST) begin 
+      Q <= 1'b0;
+    else 
+      if (T)  
+        Q <= ~Q;
+      else
+        Q <= Q;
+
+  end
+endmodule      
